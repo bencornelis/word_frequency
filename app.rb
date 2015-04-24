@@ -12,7 +12,7 @@ get('/results') do
   @sentence = params.fetch('sentence')
   @frequency = @sentence.word_frequency(@word)
 
-  if @word.==('')
+  if @word.==('') || @sentence.==('')
     erb(:error)
   else
     erb(:results)

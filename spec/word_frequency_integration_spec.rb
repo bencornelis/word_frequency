@@ -16,6 +16,13 @@ describe('the word frequency path', {:type => :feature}) do
     visit('/')
     fill_in('sentence', :with => 'Forgot my word.')
     click_button('Calculate Frequency')
-    expect(page).to have_content('You must enter a word.')
+    expect(page).to have_content('You must enter both a word and a sentence.')
+  end
+
+  it('returns an error message if the user does not submit a sentence') do
+    visit('/')
+    fill_in('word', :with => 'Forgot my sentence.')
+    click_button('Calculate Frequency')
+    expect(page).to have_content('You must enter both a word and a sentence.')
   end
 end
