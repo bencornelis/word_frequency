@@ -9,7 +9,7 @@ describe('the word frequency path', {:type => :feature}) do
     fill_in('word', :with => 'happy')
     fill_in('sentence', :with => 'I am very happy, happy, happy that my code is getting reviewed today!')
     click_button('Calculate Frequency')
-    expect(page).to have_content('The word "happy" appears 3 times in your sentence.')
+    expect(page).to have_content('The word happy appears 3 times in your sentence.')
   end
 
   it('returns an error message if the user does not submit a word') do
