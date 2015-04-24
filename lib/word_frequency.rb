@@ -11,13 +11,13 @@ class String
     end
 
     word_freq = 0
-    words = letters_and_spaces.join().split()
+    words = letters_and_spaces.join().downcase().split()
     words.each() do |word|
       if word.==(search_word)
         word_freq += 1
       end
     end
     word_freq
-    
+
   end
 end

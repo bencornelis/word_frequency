@@ -21,4 +21,8 @@ describe('String#word_frequency') do
   it('works for a sentence with punctuation') do
     expect('The bird, it is said, is a cool bird'.word_frequency('bird')).to(eq(2))
   end
+
+  it('works when the sentence contains the word capitalized') do
+    expect('Bird, bird, where are you Bird?'.word_frequency('bird')).to(eq(3))
+  end
 end
