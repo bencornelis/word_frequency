@@ -14,6 +14,12 @@ get('/results') do
   @frequency = sentence.word_frequency(@word)
   @sentence = params.fetch('sentence').style_word(@word, 'userentry')
 
+  if @frequency.==(1)
+    @time_case = 'time'
+  else
+    @time_case = 'times'
+  end
+
   if @word.==('') || @sentence.==('')
     erb(:error)
   else

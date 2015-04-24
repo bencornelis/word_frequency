@@ -1,6 +1,6 @@
 <h2>Results:</h2>
 <h4>Your sentence was: <%= @sentence %></h4>
-<h4>The word <span class='userentry'><%= @word %></span> appears <span class='userentry'><%= @frequency %></span> times in your sentence.</h4>
+<h4>The word <span class='userentry'><%= @word %></span> appears <span class='userentry'><%= @frequency %></span> <%= @time_case %> in your sentence.</h4>
 
 <form action='/'>
   <button type='sumbit' class='btn btn-success'>Try again!</button>
