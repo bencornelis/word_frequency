@@ -1,6 +1,7 @@
 class String
   define_method(:style_word) do |search_word, css_class|
 
+    search_word = search_word.downcase()
     punctuations = ['.', ',', ';', ':', '!', '?', '(', ')', '/']
     words_with_punctuation = self.split()
     words_and_punctuations = []

@@ -1,6 +1,7 @@
 class String
   define_method(:word_frequency) do |search_word|
 
+    search_word = search_word.downcase()
     punctuations = ['.', ',', ';', ':', '!', '?', '(', ')', '/']
     sentence_chars = self.split('')
     letters_and_spaces = []
