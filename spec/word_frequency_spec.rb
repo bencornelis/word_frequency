@@ -17,4 +17,8 @@ describe('String#word_frequency') do
   it('returns the frequency for a sentence with any number of words') do
     expect('one bird sang to another bird'.word_frequency('bird')).to(eq(2))
   end
+
+  it('works for a sentence with punctuation') do
+    expect('The bird, it is said, is a cool bird'.word_frequency('bird')).to(eq(2))
+  end
 end
