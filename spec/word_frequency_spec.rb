@@ -13,4 +13,8 @@ describe('String#word_frequency') do
   it('returns the frequency when the sentence is two words') do
     expect('The bird'.word_frequency('bird')).to(eq(1))
   end
+
+  it('returns the frequency for a sentence with any number of words') do
+    expect('one bird sang to another bird'.word_frequency('bird')).to(eq(2))
+  end
 end
