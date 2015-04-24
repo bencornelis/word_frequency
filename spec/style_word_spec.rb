@@ -14,4 +14,9 @@ describe("String#style_word") do
     expect("This bird, I think, is a cool bird.".style_word('bird', 'new')).to(eq(
     "This <span class='new'>bird</span>, I think, is a cool <span class='new'>bird</span>."))
   end
+
+  it("adds the span tag to capitalized versions of the word") do
+    expect("Bird, you are a cool bird.".style_word('bird', 'new')).to(eq(
+    "<span class='new'>Bird</span>, you are a cool <span class='new'>bird</span>."))
+  end
 end

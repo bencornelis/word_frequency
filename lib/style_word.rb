@@ -1,9 +1,7 @@
 class String
   define_method(:style_word) do |search_word, css_class|
 
-    styled_word = "<span class='#{css_class}'>#{search_word}</span>"
     punctuations = ['.', ',', ';', ':', '!', '?', '(', ')', '/']
-
     words_with_punctuation = self.split()
     words_and_punctuations = []
     words_with_punctuation.each() do |word|
@@ -13,8 +11,8 @@ class String
         word = word[0...-1]
       end
 
-      if word.==(search_word)
-        words_and_punctuations.push(styled_word + punctuation)
+      if word.downcase().==(search_word)
+        words_and_punctuations.push("<span class='#{css_class}'>#{word}</span>" + punctuation)
       else
         words_and_punctuations.push(word + punctuation)
       end
@@ -23,6 +21,6 @@ class String
 
     styled_sentence = words_and_punctuations.join(' ')
     styled_sentence
-    
+
   end
 end
