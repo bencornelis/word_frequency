@@ -25,4 +25,8 @@ describe('String#word_frequency') do
   it('works when the sentence contains the word capitalized') do
     expect('Bird, bird, where are you Bird?'.word_frequency('bird')).to(eq(3))
   end
+
+  it('works for any string of characters') do
+    expect('birdbird bird, ;alksdbird;;'.word_frequency('bird')).to(eq(4))
+  end
 end

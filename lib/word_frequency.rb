@@ -1,21 +1,24 @@
 class String
   define_method(:word_frequency) do |search_word|
 
-    search_word = search_word.downcase()
-    punctuations = ['.', ',', ';', ':', '!', '?', '(', ')', '/']
-    sentence_chars = self.split('')
-    letters_and_spaces = []
-    sentence_chars.each() do |char|
-      if !punctuations.include?(char)
-        letters_and_spaces.push(char)
-      end
+    word_freq = 0
+    if search_word.==('')
+      return 0
     end
 
-    word_freq = 0
-    words = letters_and_spaces.join().downcase().split()
-    words.each() do |word|
-      if word.==(search_word)
+    search_start = 0
+    search_end = search_word.length() - 1
+    string_end = self.length() - 1
+
+    until search_start.>(string_end)
+      segment = self[search_start..search_end].downcase()
+      if segment.==(search_word.downcase())
         word_freq += 1
+        search_start += search_word.length()
+        search_end += search_word.length()
+      else
+        search_start += 1
+        search_end += 1
       end
     end
     word_freq
